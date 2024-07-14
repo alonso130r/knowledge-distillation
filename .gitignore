@@ -1,0 +1,5 @@
+# ignore api keys
+.env
+
+# conda env
+/.conda
