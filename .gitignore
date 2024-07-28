@@ -3,3 +3,5 @@
 
 # conda env
 /.conda
+
+__pycache__/
