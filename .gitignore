@@ -5,3 +5,5 @@
 /.conda
 
 __pycache__/
+
+intermediate*.csv
