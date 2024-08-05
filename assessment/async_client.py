@@ -1,5 +1,6 @@
 import openai
 import jsonlines
+from pathlib import Path
 
 # DOCS - here's the OpenAI docs for batch https://platform.openai.com/docs/guides/batch
 def batch_file(batch_name : str, model: str, messages: list[list[dict]], client: openai.Client, max_tokens : int = None):
@@ -37,7 +38,7 @@ def batch_file(batch_name : str, model: str, messages: list[list[dict]], client:
             raise KeyError(f'Message {i} did not follow the correct format, as it lacked a system prompt. This was the message: {msg["messages"]}. Please correct it, see examples in the function documentation.')
         if msg['messages'][1]['role'] != 'user':
             raise KeyError(f'Message {i} did not follow the correct format, as it lacked a user prompt. This was the message: {msg["messages"]}. Please correct it, see examples in the function documentation.')
-        if not (msg['messages'][0]['content'] or msg['messages'][1]['content']):
+        if not (msg['messages'][0]['content'] and msg['messages'][1]['content']):
             raise KeyError(f'Message {i} did not follow the correct format, as the prompt was entirely empty. This was the message: {msg["messages"]}. Please correct it, see examples in the function documentation.')
         if max_tokens:
             body['max_tokens'] = max_tokens
@@ -47,9 +48,10 @@ def batch_file(batch_name : str, model: str, messages: list[list[dict]], client:
             'url' : url,
             'body' : body,
             })
-    
-    with jsonlines.open(f'{batch_name}.jsonl', mode='w') as writer:
+    path = base_path = Path()
+    base_path = base_path / '..' / 'logs' / model / f'{batch_name}.jsonl'
+    with jsonlines.open(base_path, mode='w') as writer:
         writer.write_all(reqs)
-    return f'{batch_name}.jsonl'
+    return base_path
         
     
