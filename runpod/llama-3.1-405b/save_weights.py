@@ -18,5 +18,5 @@ index = hf_hub_download(repo_id=model_name, filename="model.safetensors.index.js
 patch = hf_hub_download(repo_id=model_name, filename="patch.diff", cache_dir=custom_cache_dir, token=token)
 
 weights = []
-for i in range(1, 38):
+for i in range(1, 39):
     weights.append(hf_hub_download(repo_id=model_name, filename=f"output-{i:05}-of-00038.safetensors", cache_dir=custom_cache_dir, token=token))
