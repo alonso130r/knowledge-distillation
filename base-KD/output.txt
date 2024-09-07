@@ -1,0 +1,2 @@
+Best alpha: 0.6093348343631224
+Best temperature: 5.942267335064758
