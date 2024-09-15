@@ -27,7 +27,9 @@ Llama 3.1 405B Instruct was used for this study. A 6bit quantized version was us
 
 
 ## Evaluation
-The student model was evaluated using the script
+The student model was evaluated using this jupyter notebook. The results from the evaluation are in /logs
+
+When no answer was detected, -1 was put as the numerical value, as there are no instances of -1 being an answer in GSM8K test set. 
 
 
 
