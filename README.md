@@ -38,3 +38,14 @@ To extract numerical answers from the LLM responses, the following logic was use
 4. Looks for all the numbers in the answer, chooses the one closest to the end of the answer. 
 
 If none of these automatic extraction rules works, or if there is an issue, it is passed for manual extraction. This occured ~120 times out of GSM8K test (1319).
+
+## Results
+
+| Experiment                       | Accuracy | # of Questions Correct |
+|----------------------------------|----------|------------------------|
+| No-distillation (control)        | 12.20%   | 161                    |
+| Fine-tuning (control)            | 25.01%   | 303                    |
+| Base-KD (knowledge-distillation) | 30.62%   | 404                    |
+| Teacher-KD                       | 42.30%   | 558                    |
+| AI-to-AI-KD                      | 48.14%   | 635                    |
+| reverseKL-KD                     | 34.04%   | 499                    |
