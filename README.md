@@ -22,10 +22,11 @@ pip install https://github.com/turboderp/exllamav2/releases/download/v0.1.8/exll
 # Experimenttation
 ## Quantization
 
-Llama 3.1 405B Instruct was used for this study. A 6bit (average) quantized version was used, to reduce the cost of inference. Unfortunately, no API (known to the researchers) can be used as the study trains the student model directly on the logits outputted from the teacher model (using white-box knowledge distillation), and no known API outputs Llama 3.1 405B logits. 
+Llama 3.1 405B Instruct was used for this study. A 6bit (average) quantized version was used, to reduce the cost of inference. Unfortunately, no API (known to the researchers) can be used as the study trains the student model directly on the logits outputted from the teacher model (using white-box knowledge distillation), and no known API outputs Llama 3.1 405B logits, meaning to recreate our work, the model would have to be loaded onto hardware and tested locally.
 
 ## Training
-
+The student model was trained using an SGD optimizer and a Cosine Annealing LR scheduler. 2 epochs of our custom train split were done, and then the model was quickly ran on the eval split (loss not accuracy) to check for obvious issues with training. The exact details of the training setup can be found in the distill.ipynb files found under these folders: [teacher-KD, ai-KD, base-KD, reverseKL-KD, base-fine-tune]. 
+Note: in base-fine-tune\distill.ipynb, no knowledge distillation takes place, and the naming was chosen to keep it consistent with the rest of the file structure.
 
 ## Evaluation
 The student model was evaluated using /assessment/assess.ipynb. The results from the evaluation are in /logs
