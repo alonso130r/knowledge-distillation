@@ -13,12 +13,13 @@ Python Version: 3.11.9
 Torch Version: 2.4.0
 
 
-EXLlamaV2(link): V0.1.8
+[EXLlamaV2](https://github.com/turboderp/exllamav2): V0.1.8
 Note - this is only for systems x86 linux systems, with C++311. To run on other systems, see the EXLlamaV2 Github Releases and select the appropriate version of the 0.1.8 release. 
 ```
 pip install https://github.com/turboderp/exllamav2/releases/download/v0.1.8/exllamav2-0.1.8+cu121.torch2.4.0-cp311-cp311-linux_x86_64.whl
 ```
 
+# Experimenttation
 ## Quantization
 
 Llama 3.1 405B Instruct was used for this study. A 6bit (average) quantized version was used, to reduce the cost of inference. Unfortunately, no API (known to the researchers) can be used as the study trains the student model directly on the logits outputted from the teacher model (using white-box knowledge distillation), and no known API outputs Llama 3.1 405B logits. 
@@ -27,7 +28,7 @@ Llama 3.1 405B Instruct was used for this study. A 6bit (average) quantized vers
 
 
 ## Evaluation
-The student model was evaluated using a jupyter notebook. The results from the evaluation are in /logs
+The student model was evaluated using /assessment/assess.ipynb. The results from the evaluation are in /logs
 
 When no answer was detected, -1 was put as the numerical value, as there are no instances of -1 being an answer in GSM8K test set.
 
