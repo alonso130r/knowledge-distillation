@@ -1,5 +1,6 @@
 # knowledge-distillation
 **Built with Llama**
+
 Research platform for testing whether prompting strategies combined with knowledge distillation can increase the efficiency and accessibility of locally run LLMs.
 
 For more details see the [research paper]().
