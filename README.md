@@ -46,6 +46,7 @@ If none of these automatic extraction rules works, or if there is an issue, it i
 | No-distillation (control)        | 12.20%   | 161                    |
 | Fine-tuning (control)            | 25.01%   | 303                    |
 | Base-KD (knowledge-distillation) | 30.62%   | 404                    |
+| reverseKL-KD                     | 34.04%   | 499                    |
 | Teacher-KD                       | 42.30%   | 558                    |
 | AI-to-AI-KD                      | 48.14%   | 635                    |
-| reverseKL-KD                     | 34.04%   | 499                    |
+
