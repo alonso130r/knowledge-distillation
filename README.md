@@ -6,7 +6,7 @@ For more details see the [research paper]().
 
 # Setup
 
-NOTE - running the setup is difficult, due to the EXLlamaV2 library. Some of its details are finicky and less than straightforward to use. 
+NOTE - running the experiments is difficult, due to the EXLlamaV2 library. Some of its details are finicky and less than straightforward to use. 
 
 ## Dependencies:
 Python Version: 3.11.9
