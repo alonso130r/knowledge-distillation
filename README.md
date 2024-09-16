@@ -19,7 +19,7 @@ Note - this is only for systems x86 linux systems, with C++311. To run on other 
 pip install https://github.com/turboderp/exllamav2/releases/download/v0.1.8/exllamav2-0.1.8+cu121.torch2.4.0-cp311-cp311-linux_x86_64.whl
 ```
 
-# Experimenttation
+# Experimentation
 ## Quantization
 
 Llama 3.1 405B Instruct was used for this study. A 6bit (average) quantized version was used, to reduce the cost of inference. Unfortunately, no API (known to the researchers) can be used as the study trains the student model directly on the logits outputted from the teacher model (using white-box knowledge distillation), and no known API outputs Llama 3.1 405B logits, meaning to recreate our work, the model would have to be loaded onto hardware and tested locally.
