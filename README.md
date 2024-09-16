@@ -29,7 +29,15 @@ Llama 3.1 405B Instruct was used for this study. A 6bit quantized version was us
 ## Evaluation
 The student model was evaluated using this jupyter notebook. The results from the evaluation are in /logs
 
-When no answer was detected, -1 was put as the numerical value, as there are no instances of -1 being an answer in GSM8K test set. 
+When no answer was detected, -1 was put as the numerical value, as there are no instances of -1 being an answer in GSM8K test set.
+
+To extract numerical answers from the LLM responses, the following logic was used (implemented in the jupyter notebook using Regex), ordered by decreasing precedence:
+1. Looks for a \boxed{} label in the answer, uses the first one found.
+2. Looks at the first line of the answer, checking if there are any numbers on that line. If there is more than one, it only accepts if they're the same number.
+3. Looks for "the [final/correct] answer is" phrase, and takes the first number following that phrase.
+4. Looks for all the numbers in the answer, chooses the one closest to the end of the answer. 
+
+If none of these automatic extraction rules works, or if there is an issue, it is passed for manual extraction. This occured ~120 times out of GSM8K test (1319).
 
 
 
