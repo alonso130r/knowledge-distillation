@@ -20,6 +20,9 @@ Note - this is only for systems x86 linux systems, with C++311. To run on other 
 pip install https://github.com/turboderp/exllamav2/releases/download/v0.1.8/exllamav2-0.1.8+cu121.torch2.4.0-cp311-cp311-linux_x86_64.whl
 ```
 
+## Running order
+To run the experiment in the correct order, first download the quantized model from [Huggingface](https://huggingface.co/ek826/Meta-Llama-3.1-405B-Instruct-6.0bpw-exl2), and then run all the inference_gsm8k files to get logits for all the prompts. Then, run all the distill.ipynb files (ignoring cells that are marked to not be run) to get the LoRA adapters. Finally, run the assess.ipynb file to asses all the models for answer accuracy.
+
 # Experimentation
 ## Quantization
 
