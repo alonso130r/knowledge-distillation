@@ -56,3 +56,6 @@ If none of these automatic extraction rules works, or if there is an issue, it i
 | Teacher-KD                       | 42.30%   | 558                    |
 | AI-to-AI-KD                      | 48.14%   | 635                    |
 
+### Explanation for reverseKL prompting minor failure
+After a quick assessment of the average highest next token confidence value, it was found that the reverseKL prompted logits had a lower average probability spike than the base logits, something that could be attributed to why they were not as succesful as the other prompts.
+(File for this can be found in assessment/prob-stats.ipynb)
