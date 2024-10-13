@@ -1,0 +1,2 @@
+Consistency Accuracy for ai-kd.csv: 0.004548900682335102
+Consistency Accuracy for base-kd.csv: 0.009097801364670205
