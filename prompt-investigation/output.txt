@@ -1,2 +1,5 @@
 Consistency Accuracy for ai-kd.csv: 0.004548900682335102
 Consistency Accuracy for base-kd.csv: 0.009097801364670205
+Consistency Accuracy for no-distil.csv: 0.0
+Consistency Accuracy for reverseKL-KD.csv: 0.003032600454890068
+Consistency Accuracy for teacher-KD.csv: 0.0037907505686125853
