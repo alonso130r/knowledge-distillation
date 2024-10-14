@@ -10,8 +10,11 @@ For more details see the [research paper]().
 NOTE - running the experiments is difficult, due to the EXLlamaV2 library. Some of its details are finicky and less than straightforward to use. 
 
 ## Dependencies:
+#### These MUST be exact to ensure correct model behaviour. We noticed that newer versions may completely kill the functionality of the student models.
 Python Version: 3.11.9
 Torch Version: 2.4.0
+Transformers Version: 4.44.2
+PEFT Version: 0.12.0
 
 
 [EXLlamaV2](https://github.com/turboderp/exllamav2): V0.1.8
