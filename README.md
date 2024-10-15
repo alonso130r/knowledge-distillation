@@ -49,16 +49,12 @@ To extract numerical answers from the LLM responses, the following logic was use
 If none of these automatic extraction rules works, or if there is an issue, it is passed for manual extraction. This occured ~120 times out of GSM8K test (1319).
 
 ## Results
-
+(Note: Ground truth and Confidence are often referred to as AI-to-AI and reverseKL respectively in the file structure)
 | Experiment                       | Accuracy | # of Questions Correct |
 |----------------------------------|----------|------------------------|
 | No-distillation (control)        | 12.20%   | 161                    |
 | Fine-tuning (control)            | 25.01%   | 303                    |
 | Base-KD (knowledge-distillation) | 30.62%   | 404                    |
-| reverseKL-KD                     | 34.04%   | 499                    |
+| Confidence-KD                    | 34.04%   | 499                    |
 | Teacher-KD                       | 42.30%   | 558                    |
-| AI-to-AI-KD                      | 48.14%   | 635                    |
-
-### Explanation for reverseKL prompting minor failure
-After a quick assessment of the average highest next token confidence value, it was found that the reverseKL prompted logits had a lower average probability spike than the base logits, something that could be attributed to why they were not as succesful as the other prompts.
-(File for this can be found in assessment/prob-stats.ipynb)
+| Ground truth-KD                  | 48.14%   | 635                    |
