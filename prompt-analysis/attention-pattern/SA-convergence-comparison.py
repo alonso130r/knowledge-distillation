@@ -128,6 +128,8 @@ for metric, title in zip(metrics_names, titles):
     plt.xlabel('Layer')
     plt.ylabel(title)
     plt.title(f'{title} Across Layers for All Models')
-    plt.legend()
+    handles,labels = plt.gca().get_legend_handles_labels()
+    order = [2,1,4,3,0]
+    plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order])
     # plt.show()
     plt.savefig(f'{metric}.png')
